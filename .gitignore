@@ -1,0 +1,21 @@
+# Maven artifacts
+target/
+*.jar
+*.war
+*.ear
+
+# Eclipse project files (Optional: keep these if you want to share eclipse config, usually we ignore them)
+.classpath
+.project
+.settings/
+
+# TestNG output
+test-output/
+
+# IDE specific
+.idea/
+*.iml
+.DS_Store
+
+# Drivers (If you downloaded them manually)
+drivers/
