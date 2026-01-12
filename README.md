@@ -3,7 +3,7 @@
 ![Java](https://img.shields.io/badge/Java-21-orange) ![Selenium](https://img.shields.io/badge/Selenium-4.x-green) ![Cucumber](https://img.shields.io/badge/Cucumber-BDD-blue) ![TestNG](https://img.shields.io/badge/TestNG-7.x-red) ![Maven](https://img.shields.io/badge/Build-Maven-yellow)
 
 ## Overview
-This is a robust **End-to-End (E2E) Test Automation Framework** designed to automate critical business flows of the Flipkart e-commerce application. 
+This is a robust **End-to-End (E2E) Test Automation Framework** designed to automate the Flipkart e-commerce application. 
 
 The framework is built using **Java** and **Selenium WebDriver**, integrated with **Cucumber BDD** to support Gherkin syntax for behavior-driven testing. It leverages the **Page Object Model (POM)** design pattern to ensure code reusability, maintainability, and readability.
 
@@ -25,6 +25,23 @@ The framework is built using **Java** and **Selenium WebDriver**, integrated wit
 | **Build Tool** | Maven |
 | **Design Pattern** | Page Object Model (POM) with PageFactory |
 | **Assertions** | TestNG Assertions |
+
+
+## How to Run locally
+**Prerequisites**
+Java JDK 11 or higher installed.
+Maven installed and configured in system variables.
+
+**Steps**
+1. Clone the repository:
+`git clone [https://github.com/YOUR_USERNAME/Flipkart-E2E-Automation.git](https://github.com/YOUR_USERNAME/Flipkart-E2E-Automation.git)`
+
+2. Navigate to the project directory:
+`cd Flipkart-E2E-Automation`
+
+3. Run the tests using Maven:
+`mvn clean test`
+
 
 ## Project Structure
 ```text
