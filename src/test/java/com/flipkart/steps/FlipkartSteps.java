@@ -1,6 +1,8 @@
 package com.flipkart.steps;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import org.testng.Assert;
 
@@ -10,6 +12,7 @@ import com.flipkart.pages.CheckOutPage;
 import com.flipkart.pages.HomePage;
 import com.flipkart.pages.ProductPage;
 import com.flipkart.pages.SearchResults;
+import com.flipkart.utils.ExcelReader;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -31,16 +34,28 @@ public class FlipkartSteps extends TestBase {
 		homePage.closePopup();
 	}
 	
-	@When("I add the following products to the cart:")
-	public void i_add_the_following_products_to_the_cart(io.cucumber.datatable.DataTable dataTable) {
-		List<String> productList = dataTable.asList();
-		for(String product : productList) {
+	@When("I add products from excel {string} sheet {string}")
+	public void i_add_products_from_excel_sheet(String fileName, String sheetName) throws IOException {
+		
+		String filePath = System.getProperty("user.dir") + "/src/test/resources/testdata/" + fileName;
+		List <Map<String, String>> excelData = ExcelReader.getData(filePath, sheetName);
+		for(Map<String,String> row : excelData) {
+			String product = row.get("Product name");
+			System.out.println("fetching from excel: " + product);
+			try {Thread.sleep(1500); } catch(InterruptedException e) {};
 			homePage = new HomePage();
-			try { Thread.sleep(1500); } catch (InterruptedException e) {}
 			searchResults = homePage.searchProduct(product);
 			productPage = searchResults.clickFirstProduct();
 			productPage.addToCart();
 		}
+//		List<String> productList = dataTable.asList();
+//		for(String product : productList) {
+//			homePage = new HomePage();
+//			try { Thread.sleep(1500); } catch (InterruptedException e) {}
+//			searchResults = homePage.searchProduct(product);
+//			productPage = searchResults.clickFirstProduct();
+//			productPage.addToCart();
+//		}
 		
 	}
 	
