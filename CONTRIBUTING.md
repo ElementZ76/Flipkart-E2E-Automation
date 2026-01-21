@@ -1,4 +1,4 @@
-# Contributing to Wikipedia Automation
+# Contributing to Flipkart-E2E-Automation
 
 Thank you for your interest in contributing to the **Flipkart-E2E automation** project! We welcome contributions that add new test scenarios, improve existing code, or fix bugs.
 
