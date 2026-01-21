@@ -27,20 +27,46 @@ The framework is built using **Java** and **Selenium WebDriver**, integrated wit
 | **Assertions** | TestNG Assertions |
 
 
-## How to Run locally
-**Prerequisites**
-Java JDK 11 or higher installed.
-Maven installed and configured in system variables.
+## Prerequisites
+* **Eclipse IDE:** [Download Eclipse for Java Developers](https://www.eclipse.org/downloads/packages/)
+* **Java (JDK):** Ensure JDK is installed and configured in your system path.
+* **Git:** [Download Git](https://www.google.com/search?q=https://git-scm.com/downloads)
+* **TestNG Suite:** Ensure TestNG is configured on Eclipse. Refer to Troubleshooting for TestNG installation instructions.
 
-**Steps**
+
+## How to run locally
 1. Clone the repository:
-`git clone [https://github.com/YOUR_USERNAME/Flipkart-E2E-Automation.git](https://github.com/YOUR_USERNAME/Flipkart-E2E-Automation.git)`
+`git clone [https://github.com/ElementZ76/Flipkart-E2E-Automation.git]`
 
-2. Navigate to the project directory:
-`cd Flipkart-E2E-Automation`
+2. Import into Eclipse
+1. Open Eclipse.
+2. Go to **File** > **Import...**
+3. Expand the **Maven** folder and select **Existing Maven Projects**.
+4. Click **Next**.
+5. Click **Browse** and select the **root folder** of the project you just cloned (the folder containing the `pom.xml` file).
+6. Ensure the `pom.xml` checkbox is ticked.
+7. Click **Finish**.
 
-3. Run the tests using Maven:
-`mvn clean test`
+*Note: Wait for the progress bar at the bottom right (Building Workspace) to finish. Eclipse is downloading dependencies.*
+
+
+3. Run vis TestNG
+1. In the **Project Explorer**, locate the `TestRunner.java` file (`src/test/java/com.flipkart.runners`).
+2. Right-click `TestRunner.java`.
+3. Select **Run As** > **TestNG Test**. (refer to Troubleshooting if you cannot find the TestNG option)
+
+
+## Troubleshooting
+
+### Red Exclamation Mark on Project
+* Right-click the project > **Maven** > **Update Project...**
+* Check **Force Update of Snapshots/Releases**.
+* Click **OK**.
+
+### Cannot see "TestNG Test" under "Run As" in TestRunner file:
+*  Download "TestNG for Eclipse" from Eclipse Marketplace. (Help > Eclipse Marketplace > Search for "TestNG" and download)
+*  After downloading, force update the project.
+*  Right click on Wikipedia-Automation > Maven > Update Project > Select "Force update of Snapshots/Releases" > Click OK.
 
 
 ## Project Structure
