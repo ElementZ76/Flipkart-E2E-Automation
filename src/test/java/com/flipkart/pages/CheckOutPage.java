@@ -16,6 +16,7 @@ public class CheckOutPage extends TestBase {
 	
 	public boolean checkOutPageValidation() {
 		try {
+			waitForVisibility(loginOrSignUpTitle);
 			return loginOrSignUpTitle.isDisplayed();
 		} catch (Exception e) {
 			return false;
