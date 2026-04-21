@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.flipkart.base.TestBase;
 
 public class ProductPage extends TestBase {
-	@FindBy(xpath = "//div[@style[contains(., 'height: 44px') and contains(., 'width: 44px')]]")
+	@FindBy(xpath = "//div[contains(@style,'height: 44px') and contains(@style,'width: 44px') and contains(@style,'z-index: 2') and contains(@style,'rgb(214, 214, 214)')]")
 	WebElement addToCartBtn;
 
 	@FindBy(xpath = "//span[normalize-space()='Cart'] | //a[normalize-space()='Cart']")

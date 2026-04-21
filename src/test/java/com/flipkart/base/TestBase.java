@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -73,10 +70,11 @@ public class TestBase {
 				waitForClickability(element);
 				element.click();
 				break;
-			} catch(StaleElementReferenceException e) {
+			} catch (StaleElementReferenceException e) {
 				attempts++;
 				System.out.println("element was stale. retrying....");
-			} catch(Exception e) {
+				((JavascriptExecutor) driver).executeScript("arguments[0].click()", element);
+			} catch (Exception e) {
 				System.out.println("element was stale. max attempts reachced.");
 				throw e;
 			}
